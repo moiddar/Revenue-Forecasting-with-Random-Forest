@@ -1,6 +1,6 @@
 # <center>Revenue Forecasting</center>
 
- <center>Evaluating Random Forrest vs Prophet for Time Series Revenue Forecasting</center>
+ <center>Evaluating Random Forest vs Prophet for Time Series Revenue Forecasting</center>
 
 
 <br>
@@ -21,14 +21,14 @@
   </tr>
   <tr>
     <td style="padding: 30px;">Company A's forecasting wasn't accurate, having an error of around 13%</td>
-    <td style="padding: 30px;">Using a Random Forrest model to reduce the overall error down to 0.76%</td>
+    <td style="padding: 30px;">Using a Random Forest model to reduce the overall error down to 0.76%</td>
   </tr>
 </table>
 
 <br>
 <br>
 
-Random Forrest and Prophet were used to forecast revenue. Prophet had an error of 3.29% while Random Forrest after hyperparameter tuning had an error of **0.76%** when comparing the total actual revenue to the total predicted revenue across the 8 month test period. The model is more useful for practical business needs like monthly or yearly forecasts than it is from a pure data perspective of forecasting the daily revenue.  
+Random Forest and Prophet were used to forecast revenue. Prophet had an error of 3.29% while Random Forest after hyperparameter tuning had an error of **0.76%** when comparing the total actual revenue to the total predicted revenue across the 8 month test period. The model is more useful for practical business needs like monthly or yearly forecasts than it is from a pure data perspective of forecasting the daily revenue.  
 
 ![output](https://github.com/user-attachments/assets/81c41e94-c27d-4eb1-9ad5-6d8374064709)
 
@@ -253,15 +253,15 @@ plt.show()
 <br>
 <br>
 
-### Random Forrest
+### Random Forest
 
-Random Forrest is a machine learning algorithm that takes multiple weaker models (decision trees) and combines them to create a stronger model. It reduces overfitting by averaging a lot of uncorrelated decision trees which is important in our dataset as there's a lot of variation from macro-economic trends that the model doesn't have visibility on. 
+Random Forest is a machine learning algorithm that takes multiple weaker models (decision trees) and combines them to create a stronger model. It reduces overfitting by averaging a lot of uncorrelated decision trees which is important in our dataset as there's a lot of variation from macro-economic trends that the model doesn't have visibility on. 
 
-The actual code in the notebook was set up modularly to evaluate multiple different models including XGBoost and SVM but only Random Forrest was used. 
+The actual code in the notebook was set up modularly to evaluate multiple different models including XGBoost and SVM but only Random Forest was used. 
 
 A grid search cross validation was applied to find the optimal hyperparameters for each model. The cross validation was done using a walk forward time series split to prevent future data being used to predict the past. 
 
-The Random Forrest model had an overall error of 0.76%
+The Random Forest model had an overall error of 0.76%
 
 ```python
 # models
